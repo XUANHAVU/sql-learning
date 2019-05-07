@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sQLQuery">
+            <h2><span jhiTranslate="learnSqlApp.sQLQuery.detail.title">SQL Query</span> {{sQLQuery.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.title">Title</span></dt>
+                <dd>
+                    <span>{{sQLQuery.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.nameUrl">Name Url</span></dt>
+                <dd>
+                    <span>{{sQLQuery.nameUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.query">Query</span></dt>
+                <dd>
+                    <span>{{sQLQuery.query}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.description">Description</span></dt>
+                <dd>
+                    <span>{{sQLQuery.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{sQLQuery.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{sQLQuery.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{sQLQuery.updatedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.sQLQuery.updatedBy">Updated By</span></dt>
+                <dd>
+                    <span>{{sQLQuery.updatedBy}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sql-query', sQLQuery.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

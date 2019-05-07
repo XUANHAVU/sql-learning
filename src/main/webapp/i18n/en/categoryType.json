@@ -1,0 +1,28 @@
+{
+    "learnSqlApp": {
+        "categoryType": {
+            "home": {
+                "title": "Category Types",
+                "createLabel": "Create a new Category Type",
+                "createOrEditLabel": "Create or edit a Category Type",
+                "search": "Search for Category Type"
+            },
+            "created": "A new Category Type is created with identifier {{ param }}",
+            "updated": "A Category Type is updated with identifier {{ param }}",
+            "deleted": "A Category Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Category Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Category Type"
+            },
+            "nameCategoryType": "Name Category Type",
+            "description": "Description",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "categoryTypeID": "Category Type ID"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "learnSqlApp": {
+        "exercisesAnswer": {
+            "home": {
+                "title": "Exercises Answers",
+                "createLabel": "Create a new Exercises Answer",
+                "createOrEditLabel": "Create or edit a Exercises Answer",
+                "search": "Search for Exercises Answer"
+            },
+            "created": "A new Exercises Answer is created with identifier {{ param }}",
+            "updated": "A Exercises Answer is updated with identifier {{ param }}",
+            "deleted": "A Exercises Answer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Exercises Answer {{ id }}?"
+            },
+            "detail": {
+                "title": "Exercises Answer"
+            },
+            "result": "Result",
+            "isCorrect": "Is Correct",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "exercises": "Exercises"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "learnSqlApp": {
+        "typeContent": {
+            "home": {
+                "title": "Type Contents",
+                "createLabel": "Create a new Type Content",
+                "createOrEditLabel": "Create or edit a Type Content",
+                "search": "Search for Type Content"
+            },
+            "created": "A new Type Content is created with identifier {{ param }}",
+            "updated": "A Type Content is updated with identifier {{ param }}",
+            "deleted": "A Type Content is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Type Content {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Content"
+            },
+            "nameTypeContent": "Name Type Content",
+            "priority": "Priority",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "typeContentID": "Type Content ID"
+        }
+    }
+}

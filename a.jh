@@ -1,0 +1,118 @@
+entity CategoryType {
+	nameCategoryType String required,
+    description String,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity Category {
+	nameCategory String required,
+    title String required,
+    isKeyword Boolean,
+    description String,
+    nameTableData String,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity Content {
+	title String required,
+    content String required,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity SQLQuery {
+	title String required,
+    nameUrl String required,
+    query String required,
+    description String,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity TypeContent {
+	nameTypeContent String required,
+    priority Integer required,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity Exercises {
+	nameExercises String required,
+    question String required,
+    score Integer required,
+    timeOnMinutes Integer required,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity ExercisesAnswer {
+	result String required,
+    isCorrect Boolean,
+    createdDate Instant required,
+    createdBy Integer required,
+    updatedDate Instant required,
+    updatedBy Integer required
+}
+
+entity Orders {
+	orderDate Instant required
+}
+
+entity Customer {
+	customerName String required,
+    contactName String required,
+    address String required,
+    city String required,
+    postalCode String required,
+    country String required
+}
+
+entity Employees {
+	lastName String required,
+    firstName String required,
+    birthDate Instant required,
+    notes String required
+}
+
+entity Shipper {
+	shipperName String required,
+    phone String required
+}
+
+relationship OneToMany {
+	CategoryType{CategoryTypeID} to Category
+}
+
+relationship OneToMany {
+    TypeContent{TypeContentID} to Content,
+	Category{CateID} to Content
+}
+
+relationship OneToMany {
+	Category{CategoryID} to Exercises,
+    Exercises{ExercisesID} to ExercisesAnswer
+}
+
+relationship OneToMany {
+	Customer{CustomerID} to Orders,
+    Employees{EmployeesID} to Orders,
+    Shipper{ShipperID} to Orders
+}
+
+dto * with mapstruct
+
+service all with serviceImpl

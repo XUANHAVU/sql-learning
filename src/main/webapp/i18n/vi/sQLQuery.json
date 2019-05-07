@@ -1,0 +1,29 @@
+{
+    "learnSqlApp": {
+        "sQLQuery": {
+            "home": {
+                "title": "SQL Queries",
+                "createLabel": "Thêm mới một SQL Query",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật SQL Query",
+                "search": "Tìm SQL Query"
+            },
+            "created": "Một SQL Query mới được tạo với định danh {{ param }}",
+            "updated": "Một SQL Query cập nhật với định danh {{ param }}",
+            "deleted": "Một SQL Query đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa SQL Query {{ id }}?"
+            },
+            "detail": {
+                "title": "SQL Query"
+            },
+            "title": "Title",
+            "nameUrl": "Name Url",
+            "query": "Query",
+            "description": "Description",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By"
+        }
+    }
+}

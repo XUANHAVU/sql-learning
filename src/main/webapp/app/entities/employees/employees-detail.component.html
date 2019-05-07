@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employees">
+            <h2><span jhiTranslate="learnSqlApp.employees.detail.title">Employees</span> {{employees.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="learnSqlApp.employees.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{employees.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.employees.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{employees.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.employees.birthDate">Birth Date</span></dt>
+                <dd>
+                    <span>{{employees.birthDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.employees.notes">Notes</span></dt>
+                <dd>
+                    <span>{{employees.notes}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employees', employees.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

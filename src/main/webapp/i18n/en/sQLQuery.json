@@ -1,0 +1,29 @@
+{
+    "learnSqlApp": {
+        "sQLQuery": {
+            "home": {
+                "title": "SQL Queries",
+                "createLabel": "Create a new SQL Query",
+                "createOrEditLabel": "Create or edit a SQL Query",
+                "search": "Search for SQL Query"
+            },
+            "created": "A new SQL Query is created with identifier {{ param }}",
+            "updated": "A SQL Query is updated with identifier {{ param }}",
+            "deleted": "A SQL Query is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete SQL Query {{ id }}?"
+            },
+            "detail": {
+                "title": "SQL Query"
+            },
+            "title": "Title",
+            "nameUrl": "Name Url",
+            "query": "Query",
+            "description": "Description",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By"
+        }
+    }
+}

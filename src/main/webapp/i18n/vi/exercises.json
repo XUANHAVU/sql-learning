@@ -1,0 +1,31 @@
+{
+    "learnSqlApp": {
+        "exercises": {
+            "home": {
+                "title": "Exercises",
+                "createLabel": "Thêm mới một Exercises",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Exercises",
+                "search": "Tìm Exercises"
+            },
+            "created": "Một Exercises mới được tạo với định danh {{ param }}",
+            "updated": "Một Exercises cập nhật với định danh {{ param }}",
+            "deleted": "Một Exercises đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Exercises {{ id }}?"
+            },
+            "detail": {
+                "title": "Exercises"
+            },
+            "nameExercises": "Name Exercises",
+            "question": "Question",
+            "score": "Score",
+            "timeOnMinutes": "Time On Minutes",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "category": "Category",
+            "exercisesID": "Exercises ID"
+        }
+    }
+}

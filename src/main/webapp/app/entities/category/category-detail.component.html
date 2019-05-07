@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="category">
+            <h2><span jhiTranslate="learnSqlApp.category.detail.title">Category</span> {{category.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="learnSqlApp.category.nameCategory">Name Category</span></dt>
+                <dd>
+                    <span>{{category.nameCategory}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.title">Title</span></dt>
+                <dd>
+                    <span>{{category.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.isKeyword">Is Keyword</span></dt>
+                <dd>
+                    <span>{{category.isKeyword}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.description">Description</span></dt>
+                <dd>
+                    <span>{{category.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.nameTableData">Name Table Data</span></dt>
+                <dd>
+                    <span>{{category.nameTableData}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{category.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{category.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{category.updatedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.updatedBy">Updated By</span></dt>
+                <dd>
+                    <span>{{category.updatedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.category.categoryType">Category Type</span></dt>
+                <dd>
+                    <div *ngIf="category.categoryTypeId">
+                        <a [routerLink]="['/category-type', category.categoryTypeId, 'view']">{{category.categoryTypeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/category', category.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

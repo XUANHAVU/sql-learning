@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.thanglongedu.learnsql",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "LearnSQL",
+        "packageName": "com.thanglongedu.learnsql",
+        "packageFolder": "com/thanglongedu/learnsql",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "mysql",
+        "prodDatabaseType": "mysql",
+        "searchEngine": "elasticsearch",
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "ZmY4YzhhNmNiYjNmNGE5YTU3NWIxYzUxMjBlMmYzNDZiNjEzZGQxNWZhODU2Mzc1MTczNmQxZDMzYzZjYzQ3NmUwZjYyODkxYmE0ZjJhNDE3MjdlMTVmMmE3OGRlMGFjNzQzNDZiOTAwMmExZDFkNzlkOTI5MmMxMzc0MzQ5Nzc=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "vi"]
+    }
+}

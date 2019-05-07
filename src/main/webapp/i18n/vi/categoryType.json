@@ -1,0 +1,28 @@
+{
+    "learnSqlApp": {
+        "categoryType": {
+            "home": {
+                "title": "Category Types",
+                "createLabel": "Thêm mới một Category Type",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Category Type",
+                "search": "Tìm Category Type"
+            },
+            "created": "Một Category Type mới được tạo với định danh {{ param }}",
+            "updated": "Một Category Type cập nhật với định danh {{ param }}",
+            "deleted": "Một Category Type đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Category Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Category Type"
+            },
+            "nameCategoryType": "Name Category Type",
+            "description": "Description",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "categoryTypeID": "Category Type ID"
+        }
+    }
+}

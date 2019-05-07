@@ -1,0 +1,33 @@
+{
+    "learnSqlApp": {
+        "category": {
+            "home": {
+                "title": "Categories",
+                "createLabel": "Create a new Category",
+                "createOrEditLabel": "Create or edit a Category",
+                "search": "Search for Category"
+            },
+            "created": "A new Category is created with identifier {{ param }}",
+            "updated": "A Category is updated with identifier {{ param }}",
+            "deleted": "A Category is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "nameCategory": "Name Category",
+            "title": "Title",
+            "isKeyword": "Is Keyword",
+            "description": "Description",
+            "nameTableData": "Name Table Data",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "categoryType": "Category Type",
+            "cateID": "Cate ID",
+            "categoryID": "Category ID"
+        }
+    }
+}

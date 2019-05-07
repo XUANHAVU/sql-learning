@@ -1,0 +1,29 @@
+{
+    "learnSqlApp": {
+        "content": {
+            "home": {
+                "title": "Contents",
+                "createLabel": "Thêm mới một Content",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Content",
+                "search": "Tìm Content"
+            },
+            "created": "Một Content mới được tạo với định danh {{ param }}",
+            "updated": "Một Content cập nhật với định danh {{ param }}",
+            "deleted": "Một Content đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Content {{ id }}?"
+            },
+            "detail": {
+                "title": "Content"
+            },
+            "title": "Title",
+            "content": "Content",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "category": "Category",
+            "typeContent": "Type Content"
+        }
+    }
+}

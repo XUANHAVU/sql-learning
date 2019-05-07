@@ -1,0 +1,28 @@
+{
+    "learnSqlApp": {
+        "typeContent": {
+            "home": {
+                "title": "Type Contents",
+                "createLabel": "Thêm mới một Type Content",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Type Content",
+                "search": "Tìm Type Content"
+            },
+            "created": "Một Type Content mới được tạo với định danh {{ param }}",
+            "updated": "Một Type Content cập nhật với định danh {{ param }}",
+            "deleted": "Một Type Content đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Type Content {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Content"
+            },
+            "nameTypeContent": "Name Type Content",
+            "priority": "Priority",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "typeContentID": "Type Content ID"
+        }
+    }
+}

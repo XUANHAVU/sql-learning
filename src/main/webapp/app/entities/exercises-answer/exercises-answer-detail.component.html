@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="exercisesAnswer">
+            <h2><span jhiTranslate="learnSqlApp.exercisesAnswer.detail.title">Exercises Answer</span> {{exercisesAnswer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.result">Result</span></dt>
+                <dd>
+                    <span>{{exercisesAnswer.result}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.isCorrect">Is Correct</span></dt>
+                <dd>
+                    <span>{{exercisesAnswer.isCorrect}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{exercisesAnswer.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{exercisesAnswer.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{exercisesAnswer.updatedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.updatedBy">Updated By</span></dt>
+                <dd>
+                    <span>{{exercisesAnswer.updatedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercisesAnswer.exercises">Exercises</span></dt>
+                <dd>
+                    <div *ngIf="exercisesAnswer.exercisesId">
+                        <a [routerLink]="['/exercises', exercisesAnswer.exercisesId, 'view']">{{exercisesAnswer.exercisesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/exercises-answer', exercisesAnswer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

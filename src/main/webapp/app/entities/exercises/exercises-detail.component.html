@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="exercises">
+            <h2><span jhiTranslate="learnSqlApp.exercises.detail.title">Exercises</span> {{exercises.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="learnSqlApp.exercises.nameExercises">Name Exercises</span></dt>
+                <dd>
+                    <span>{{exercises.nameExercises}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.question">Question</span></dt>
+                <dd>
+                    <span>{{exercises.question}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.score">Score</span></dt>
+                <dd>
+                    <span>{{exercises.score}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.timeOnMinutes">Time On Minutes</span></dt>
+                <dd>
+                    <span>{{exercises.timeOnMinutes}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{exercises.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{exercises.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{exercises.updatedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.updatedBy">Updated By</span></dt>
+                <dd>
+                    <span>{{exercises.updatedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.exercises.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="exercises.categoryId">
+                        <a [routerLink]="['/category', exercises.categoryId, 'view']">{{exercises.categoryId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/exercises', exercises.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

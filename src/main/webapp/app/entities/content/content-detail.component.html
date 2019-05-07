@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="content">
+            <h2><span jhiTranslate="learnSqlApp.content.detail.title">Content</span> {{content.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="learnSqlApp.content.title">Title</span></dt>
+                <dd>
+                    <span>{{content.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.content">Content</span></dt>
+                <dd>
+                    <span>{{content.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{content.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{content.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{content.updatedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.updatedBy">Updated By</span></dt>
+                <dd>
+                    <span>{{content.updatedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="content.categoryId">
+                        <a [routerLink]="['/category', content.categoryId, 'view']">{{content.categoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="learnSqlApp.content.typeContent">Type Content</span></dt>
+                <dd>
+                    <div *ngIf="content.typeContentId">
+                        <a [routerLink]="['/type-content', content.typeContentId, 'view']">{{content.typeContentId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/content', content.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

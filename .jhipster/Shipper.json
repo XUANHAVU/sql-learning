@@ -1,0 +1,36 @@
+{
+    "name": "Shipper",
+    "fields": [
+        {
+            "fieldName": "shipperName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "orders",
+            "otherEntityRelationshipName": "shipper",
+            "relationshipName": "shipperID"
+        }
+    ],
+    "changelogDate": "20190423111358",
+    "entityTableName": "shipper",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

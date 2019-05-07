@@ -1,0 +1,33 @@
+{
+    "learnSqlApp": {
+        "category": {
+            "home": {
+                "title": "Categories",
+                "createLabel": "Thêm mới một Category",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Category",
+                "search": "Tìm Category"
+            },
+            "created": "Một Category mới được tạo với định danh {{ param }}",
+            "updated": "Một Category cập nhật với định danh {{ param }}",
+            "deleted": "Một Category đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "nameCategory": "Name Category",
+            "title": "Title",
+            "isKeyword": "Is Keyword",
+            "description": "Description",
+            "nameTableData": "Name Table Data",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "updatedDate": "Updated Date",
+            "updatedBy": "Updated By",
+            "categoryType": "Category Type",
+            "cateID": "Cate ID",
+            "categoryID": "Category ID"
+        }
+    }
+}
