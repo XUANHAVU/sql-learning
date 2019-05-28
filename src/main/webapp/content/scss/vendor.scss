@@ -1,5 +1,11 @@
 /* after changing this file run 'npm run webpack:build' */
 
+$fa-font-path: '../../../../../node_modules/@fortawesome/fontawesome-free/webfonts' !default;
+// Images Path for angular-bootstrap-md
+$image-path: '../../../../../node_modules/angular-bootstrap-md/img' !default;
+// Fonts Path for angular-bootstrap-md
+$roboto-font-path: "../../../../../node_modules/angular-bootstrap-md/font/roboto/" !default;
+
 /***************************
 put Sass variables here:
 eg $input-color: red;
@@ -7,6 +13,14 @@ eg $input-color: red;
 // Override Boostrap variables
 @import 'bootstrap-variables';
 // Import Bootstrap source files from node_modules
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~angular-bootstrap-md/scss/bootstrap/bootstrap";
+@import "~angular-bootstrap-md/scss/mdb-free";
+//@import "~angular-calendar/scss/angular-calendar.scss";
 
 /* jhipster-needle-scss-add-vendor JHipster will add new css style */

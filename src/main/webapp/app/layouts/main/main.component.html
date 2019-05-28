@@ -1,11 +1,21 @@
-<jhi-page-ribbon></jhi-page-ribbon>
-<div>
-    <router-outlet name="navbar"></router-outlet>
-</div>
-<div class="container-fluid">
-    <div class="card jh-card">
+<!--<jhi-page-ribbon></jhi-page-ribbon>-->
+<!--<div>-->
+    <!--<router-outlet name="navbar"></router-outlet>-->
+<!--</div>-->
+<!--<div class="container-fluid">-->
+    <!--<div class="card jh-card">-->
+        <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
+<!--</div>-->
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+
+    <div class="mt-5">
         <router-outlet></router-outlet>
         <router-outlet name="popup"></router-outlet>
     </div>
-    <jhi-footer></jhi-footer>
-</div>
+</main>
+
+<app-footer></app-footer>
