@@ -1,13 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {filter, map} from 'rxjs/operators';
+import {JhiEventManager, JhiAlertService} from 'ng-jhipster';
 
-import { ICategoryType } from 'app/shared/model/category-type.model';
-import { AccountService } from 'app/core';
-import { CategoryTypeService } from './category-type.service';
+import {ICategoryType} from 'app/shared/model/category-type.model';
+import {AccountService} from 'app/core';
+import {CategoryTypeService} from './category-type.service';
 
 @Component({
     selector: 'jhi-category-type',

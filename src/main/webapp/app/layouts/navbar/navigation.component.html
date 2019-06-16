@@ -1,63 +1,294 @@
 <!--Main Navigation-->
 <header>
-
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed scrollbar scroll-sidebar scrollbar-rare-wind"
+         [ngSwitch]="isAuthenticated()">
 
-        <a class="logo-wrapper waves-effect">
+        <a class="logo-wrapper waves-effect" *ngSwitchCase="true">
             <img src="../../../content/images/angular-mdb.png" class="img-fluid" alt="">
         </a>
 
-        <div class="list-group list-group-flush">
+        <div class="list-group list-group-flush" *ngSwitchCase="true">
 
-            <a routerLink="dashboards" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action waves-effect">
-                <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>Dashboard
+            <a routerLink="category-type"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.categoryType">Category Type</span>
             </a>
-            <a routerLink="profiles" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action waves-effect">
-                <mdb-icon fas icon="user" class="mr-3"></mdb-icon>Profile</a>
-            <a routerLink="tables" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action waves-effect">
-                <mdb-icon fas icon="table" class="mr-3"></mdb-icon>Tables</a>
-            <a routerLink="maps" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action waves-effect">
-                <mdb-icon far icon="map" class="mr-3"></mdb-icon>Maps</a>
-            <a routerLink="404" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item list-group-item-action waves-effect">
-                <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>404</a>
+
+            <a routerLink="category"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.category">Category</span>
+            </a>
+
+            <a routerLink="content"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.content">Content</span>
+            </a>
+
+            <a routerLink="sql-query"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.sqlQuery">Sql Query</span>
+            </a>
+
+            <a routerLink="type-content"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.typeContent">Type Content</span>
+            </a>
+
+            <a routerLink="exercises"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.exercises">Exercises</span>
+            </a>
+
+            <a routerLink="exercises-answer"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.exercisesAnswer">Exercises Answer</span>
+            </a>
+
+            <a routerLink="orders"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.orders">Orders</span>
+            </a>
+
+            <a routerLink="customer"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.customer">Customer</span>
+            </a>
+
+            <a routerLink="employees"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.employees">Employees</span>
+            </a>
+
+            <a routerLink="shipper"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <i class="fas fa-code"></i>
+                <span jhiTranslate="global.menu.entities.shipper">Shipper</span>
+            </a>
 
         </div>
 
+        <div class="list-group list-group-flush force-overflow" *ngSwitchCase="false">
+            <!--<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">-->
+                <!--&lt;!&ndash; This is the tree node template for leaf nodes &ndash;&gt;-->
+                <!--<mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>-->
+                    <!--<button mat-button-->
+                            <!--(click)="changeNode(node.id)"-->
+                            <!--class="waves-effect"-->
+                            <!--routerLinkActive="active"-->
+                            <!--[routerLink]="['/', node.id, node.name.toString().replace(globalreplace, '_').replace(globalreplace2, '') ]">-->
+                        <!--{{node.name}}-->
+                    <!--</button>-->
+                <!--</mat-tree-node>-->
+                <!--&lt;!&ndash; This is the tree node template for expandable nodes &ndash;&gt;-->
+                <!--<mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>-->
+                    <!--<button mat-icon-button matTreeNodeToggle-->
+                            <!--[attr.aria-label]="'toggle ' + node.name">-->
+                        <!--<mat-icon class="mat-icon-rtl-mirror">-->
+                            <!--{{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
+                        <!--</mat-icon>-->
+                    <!--</button>-->
+                    <!--{{node.name}}-->
+                <!--</mat-tree-node>-->
+            <!--</mat-tree>-->
+            <ul *ngFor="let categoryType of categoryTypes" class="list-group">
+            <li class="list-group-item">
+                <h4>{{categoryType.nameCategoryType}}</h4>
+                <ul *ngFor="let category of categories" class="list-group">
+                    <li *ngIf="categoryType.id == category.categoryTypeId"
+                        class="list-item">
+                        <a class="list-group-item list-group-item-action waves-effect"
+                           (click)="changeNode(category.id)"
+                           routerLinkActive="active"
+                           [routerLink]="['/', 'view', category.nameCategory.toString().replace(globalreplace, '_').replace(globalreplace2, ''), category.id ]">
+                            <span>
+                            {{category.nameCategory}}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </div>
     </div>
     <!-- Sidebar -->
 
     <!--Navbar-->
-    <mdb-navbar SideClass="navbar navbar-expand-lg white" [containerInside]="false">
+    <mdb-navbar SideClass="navbar navbar-expand-lg white" [containerInside]="false" [ngSwitch]="isAuthenticated()">
 
         <!-- Navbar brand -->
-
-        <logo class="ml-3">
-            <a class="navbar-brand" href="#">
-                <strong class="blue-text">SQL Learning</strong>
-            </a>
-        </logo>
-
+        <div>
+            <logo class="ml-3">
+                <a class="navbar-brand">
+                    <strong class="text-info">SQL Learning</strong>
+                </a>
+            </logo>
+            <logo class="ml-3">
+                <a class="navbar-brand" routerLink="try-it">
+                    <strong class="text-info">Try It!</strong>
+                </a>
+            </logo>
+        </div>
         <!-- Collapsible content -->
         <links>
-
             <!-- Links -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
+                <!-- Home -->
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link waves-light text-info" mdbWavesEffect routerLink="/" (click)="collapseNavbar()">
+                    <span>
+                        <mdb-icon fas icon="home"></mdb-icon>
+                        <span jhiTranslate="global.menu.home">Home</span>
+                    </span>
+                    </a>
                 </li>
 
-                <!-- Dropdown -->
+                <!-- Language -->
+                <li dropdown class="nav-item dropdown" *ngIf="languages && languages.length > 1">
+                    <a class="nav-link dropdown-toggle" dropdownToggle id="languagesnavBarDropdown">
+                    <span>
+                        <fa-icon icon="flag"></fa-icon>
+                        <span jhiTranslate="global.menu.language">Language</span>
+                    </span>
+                    </a>
+                    <ul class="dropdown-menu" *dropdownMenu
+                        class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                        <li *ngFor="let language of languages">
+                            <a class="dropdown-item" [jhiActiveMenu]="language" href="javascript:void(0);"
+                               (click)="changeLanguage(language);collapseNavbar();">{{language |
+                                findLanguageFromKey}}</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Administration -->
+                <li *jhiHasAnyAuthority="'ROLE_ADMIN'" class="nav-item dropdown" dropdown routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                       mdbWavesEffect>
+                    <span>
+                        <mdb-icon fas icon="shield-alt"></mdb-icon>
+                        <span jhiTranslate="global.menu.admin.main">Administration</span>
+                    </span>
+                    </a>
+                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary"
+                        aria-labelledby="admin-menu">
+                        <li>
+                            <a class="dropdown-item" routerLink="admin/user-management" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="user" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.userManagement">User management</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="admin/jhi-metrics" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="tachometer-alt" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.metrics">Metrics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="admin/jhi-health" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="heart" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.health">Health</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="admin/jhi-configuration" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="list" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.configuration">Configuration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="admin/audits" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="bell" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.audits">Audits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="admin/logs" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="tasks" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.logs">Logs</span>
+                            </a>
+                        </li>
+                        <li *ngIf="swaggerEnabled">
+                            <a class="dropdown-item" routerLink="admin/docs" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="book" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.admin.apidocs">API</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+                    </ul>
+                </li>
+
+                <!-- Profile -->
                 <li class="nav-item dropdown" dropdown>
-                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                        <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
-                    <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
-                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
-                    </div>
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                       mdbWavesEffect>
+                        <mdb-icon fas icon="user"></mdb-icon>
+                        <span class="caret" jhiTranslate="global.menu.profile">Profile</span>
+                    </a>
+                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                        <li *ngSwitchCase="true">
+                            <a class="dropdown-item" routerLink="settings" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="wrench" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.account.settings">Settings</span>
+                            </a>
+                        </li>
+                        <li *ngSwitchCase="true">
+                            <a class="dropdown-item" routerLink="password" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="clock" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.account.password">Password</span>
+                            </a>
+                        </li>
+                        <li *ngSwitchCase="true">
+                            <a class="dropdown-item" (click)="logout()" id="logout">
+                                <fa-icon icon="sign-out-alt" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                            </a>
+                        </li>
+                        <li *ngSwitchCase="false">
+                            <a class="dropdown-item" (click)="login()" id="login">
+                                <fa-icon icon="sign-in-alt" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.account.login">Sign in</span>
+                            </a>
+                        </li>
+                        <li *ngSwitchCase="false">
+                            <a class="dropdown-item" routerLink="register" routerLinkActive="active"
+                               (click)="collapseNavbar()">
+                                <fa-icon icon="user-plus" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.account.register">Register</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
             </ul>

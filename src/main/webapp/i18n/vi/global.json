@@ -43,17 +43,22 @@
                 "database": "Cơ sở dữ liệu",
                 "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
             },
-            "language": "Ngôn ngữ"
+            "language": "Ngôn ngữ",
+            "profile": "Thông tin"
         },
         "form": {
-            "username": "Tên tài khoản",
+            "username": "Tên đăng nhập",
             "username.placeholder": "Nhập tên tài khoản của bạn",
+            "currentpassword": "Mật khẩu hiện tại",
             "newpassword": "Mật khẩu mới",
             "newpassword.placeholder": "Nhập mật khẩu mới",
             "confirmpassword": "Xác nhận mật khẩu mới",
             "confirmpassword.placeholder": "Nhập lại mật khẩu mới",
             "email": "Email",
-            "email.placeholder": "Nhập email của bạn"
+            "email.placeholder": "Nhập email của bạn",
+            "remember": "Ghi nhớ",
+            "notmember": "Bạn không phải là thành viên?",
+            "signinwith": "Hoặc đăng nhập với:"
         },
         "messages": {
             "info": {
@@ -96,6 +101,17 @@
         },
         "ribbon": {
             "dev": "Phát triển"
+        },
+        "footer": {
+            "title": "THE WORLD'S LARGEST WEB DEVELOPER SITE",
+            "contact": "Liên Hệ",
+            "aboutus": "Về Chúng Tôi",
+            "el": "Dễ dàng học",
+            "tiy": "Tự bản thân trải nghiệm",
+            "free": "Miễn phí",
+            "address": "Nghiêm Xuân Yêm - Đại Kim - Hoàng Mai - Hà Nội",
+            "col1": "Đại Học Thăng Long",
+            "ndcol1": "Web trực tuyến được tối ưu hóa cho việc học, kiểm tra và đào tạo. Các ví dụ có thể được đơn giản hóa để cải thiện việc đọc và hiểu cơ bản. Hướng dẫn, tài liệu tham khảo và ví dụ liên tục được xem xét để tránh lỗi, nhưng chúng tôi không thể đảm bảo tính chính xác của tất cả nội dung."
         },
         "item-count": "Showing {{first}} - {{second}} of {{total}} items."
     },

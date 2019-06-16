@@ -1,23 +1,184 @@
-<div class="row">
-    <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
-    </div>
-    <div class="col-md-9">
-        <p class="lead" jhiTranslate="home.subtitle">This is your homepage</p>
-
-        <div [ngSwitch]="isAuthenticated()">
-            <div class="alert alert-success" *ngSwitchCase="true">
-                <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
-                    [translateValues]="{username: account.login}"> You are logged in as user "{{account.login}}". </span>
+<div class="row" *ngIf="idContent">
+    <div class="col-md-12">
+        <p class="h1">{{getTitle(idContent)}}</p>
+        <br>
+        <div class="clearfix">
+            <span class="float-left">
+                <button type="button" mdbBtn color="success" mdbWavesEffect (click)="previous(idContent)">
+                    <mdb-icon fas icon="chevron-left"></mdb-icon>
+                    Previous
+                </button>
+            </span>
+            <span class="float-right">
+                <button type="button" mdbBtn color="success" mdbWavesEffect (click)="next(idContent)">
+                    Next
+                    <mdb-icon fas icon="chevron-right"></mdb-icon>
+                </button>
+            </span>
+        </div>
+        <hr *ngIf="idContent">
+        <div *ngFor="let content of contents">
+            <!--Paragraph-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 1">
+                <blockquote class="blockquote bq-primary">
+                    <p class="bq-title">{{ content.title }}</p>
+                    <p style="list-style: none;" innerHTML="{{ content.content | substring }}"></p>
+                </blockquote>
+                <hr>
             </div>
 
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
-                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a><span jhiTranslate="global.messages.info.authenticated.suffix">, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+            <!--Note-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 2">
+                <blockquote class="blockquote bq-warning my-4">
+                    <p class="py-1 mb-0 text-warning"><a rel="nofollow">{{ content.title }}</a></p>
+                    <p><em>{{ content.content }}</em></p>
+                </blockquote>
+                <hr>
             </div>
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
-                <a class="alert-link" routerLink="register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
+
+            <!--Syntax-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 3">
+                <mdb-card>
+                    <mdb-card-header class="palegreenColor">{{ content.title }}</mdb-card-header>
+                    <mdb-card-body>
+                        <blockquote class="blockquote bq-success">
+                            <p innerHTML="{{ content.content | highlight: arrayHighLight}}"></p>
+                        </blockquote>
+                    </mdb-card-body>
+                </mdb-card>
+                <hr>
+            </div>
+
+            <!--Table Data-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 4">
+                <h3 class="h3-responsive"><strong>{{content.title}}</strong></h3>
+                <h5 class="h5-responsive">{{content.content}}</h5>
+                <div *ngIf="getTableData(idContent) === 'Customers'">
+                    <table mdbTable hover="true">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</span></th>
+                            <th scope="col">Customer Name</span></th>
+                            <th scope="col">Contact Name</span></th>
+                            <th scope="col">Address</span></th>
+                            <th scope="col">City</span></th>
+                            <th scope="col">Postal Code</span></th>
+                            <th scope="col">Country</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr mdbTableCol *ngFor="let customer of customers; let i=index">
+                            <th scope="row" *ngIf="i<limitRecord">{{customer.id}}</th>
+                            <td *ngIf="i<limitRecord">{{customer.customerName}}</td>
+                            <td *ngIf="i<limitRecord">{{customer.contactName}}</td>
+                            <td *ngIf="i<limitRecord">{{customer.address}}</td>
+                            <td *ngIf="i<limitRecord">{{customer.city}}</td>
+                            <td *ngIf="i<limitRecord">{{customer.postalCode}}</td>
+                            <td *ngIf="i<limitRecord">{{customer.country}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div *ngIf="getTableData(idContent) === 'Employees'">
+                    <table mdbTable hover="true">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</span></th>
+                            <th scope="col">Last Name</span></th>
+                            <th scope="col">First Name</span></th>
+                            <th scope="col">Birth Date</span></th>
+                            <th scope="col">Notes</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr mdbTableCol *ngFor="let employee of employees; let i=index">
+                            <th scope="row" *ngIf="i<limitRecord">{{employee.id}}</th>
+                            <td *ngIf="i<limitRecord">{{employee.lastName}}</td>
+                            <td *ngIf="i<limitRecord">{{employee.firstName}}</td>
+                            <td *ngIf="i<limitRecord">{{employee.birthDate | date:'medium'}}</td>
+                            <td *ngIf="i<limitRecord">{{employee.notes}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div *ngIf="getTableData(idContent) === 'Orders'">
+                    <table mdbTable hover="true">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</span></th>
+                            <th scope="col">Order Date</span></th>
+                            <th scope="col">Customer</span></th>
+                            <th scope="col">Employees</span></th>
+                            <th scope="col">Shipper</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr mdbTableCol *ngFor="let orders of orders; let i=index">
+                            <th scope="row" *ngIf="i<limitRecord">{{orders.id}}</th>
+                            <td *ngIf="i<limitRecord">{{orders.orderDate | date:'medium'}}</td>
+                            <td *ngIf="i<limitRecord">{{orders.customerId}}</td>
+                            <td *ngIf="i<limitRecord">{{orders.employeesId}}</td>
+                            <td *ngIf="i<limitRecord">{{orders.shipperId}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div *ngIf="getTableData(idContent) === 'Shipper'">
+                    <table mdbTable hover="true">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</span></th>
+                            <th scope="col">Shipper Name</span></th>
+                            <th scope="col">Phone</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr mdbTableCol *ngFor="let shipper of shippers; let i=index">
+                            <th scope="row" *ngIf="i<limitRecord">{{shipper.id}}</th>
+                            <td *ngIf="i<limitRecord">{{shipper.shipperName}}</td>
+                            <td *ngIf="i<limitRecord">{{shipper.phone}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+            </div>
+
+            <!--Tip-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 5">
+                <blockquote class="blockquote bq-warning my-4">
+                    <p class="py-1 mb-0 text-warning"><a rel="nofollow">{{ content.title }}</a></p>
+                    <p><em>{{ content.content }}</em></p>
+                </blockquote>
+                <hr>
+            </div>
+
+            <!--Example-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 6">
+                <mdb-card>
+                    <mdb-card-header>{{content.title}}</mdb-card-header>
+                    <mdb-card-body>
+                        <mdb-card-title>
+                            <h5>{{content.content}}</h5>
+                        </mdb-card-title>
+                        <!--<mdb-card-text>-->
+                        <!--<h5>{{content.content}}</h5>-->
+                        <!--</mdb-card-text>-->
+                        <a [target]="_blank" routerLink="try-it" mdbBtn color="success">Try it Yourself »</a>
+                    </mdb-card-body>
+                </mdb-card>
+                <hr>
+            </div>
+
+            <!--References-->
+            <div *ngIf="content.categoryId === idContent && content.typeContentId === 7">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" [src]="(content.content) | safe" allowfullscreen></iframe>
+                </div>
+                <hr>
             </div>
         </div>
     </div>

@@ -228,7 +228,7 @@ ui bootstrap tweaks
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #eee;
+    background-color: #ffffff;
 }
 
 .card.card-cascade .view.gradient-card-header {
@@ -284,5 +284,28 @@ body {
     }
 }
 
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/materialicons.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */

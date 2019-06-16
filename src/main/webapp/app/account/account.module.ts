@@ -13,9 +13,10 @@ import {
     SettingsComponent,
     accountState
 } from './';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 @NgModule({
-    imports: [LearnSqlSharedModule, RouterModule.forChild(accountState)],
+    imports: [LearnSqlSharedModule, RouterModule.forChild(accountState), MDBBootstrapModule.forRoot()],
     declarations: [
         ActivateComponent,
         RegisterComponent,

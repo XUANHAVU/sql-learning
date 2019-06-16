@@ -11,9 +11,9 @@
 
             <form name="form" role="form" (ngSubmit)="save()" #settingsForm="ngForm" *ngIf="settingsAccount" novalidate>
 
-                <div class="form-group">
-                    <label class="form-control-label" for="firstName" jhiTranslate="settings.form.firstname">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{'settings.form.firstname.placeholder' | translate}}"
+                <div class="md-form">
+                    <label for="firstName" class="" jhiTranslate="settings.form.firstname">First Name</label>
+                    <input mdbInput type="text" class="form-control" id="firstName" name="firstName"
                            [(ngModel)]="settingsAccount.firstName" minlength=1 maxlength=50 #firstNameInput="ngModel" required>
                     <div *ngIf="firstNameInput.dirty && firstNameInput.invalid">
                         <small class="form-text text-danger"
@@ -30,9 +30,9 @@
                         </small>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="lastName" jhiTranslate="settings.form.lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{'settings.form.lastname.placeholder' | translate}}"
+                <div class="md-form">
+                    <label for="lastName" class="" jhiTranslate="settings.form.lastname">Last Name</label>
+                    <input mdbInput type="text" class="form-control" id="lastName" name="lastName"
                            [(ngModel)]="settingsAccount.lastName" minlength=1 maxlength=50 #lastNameInput="ngModel" required>
                     <div *ngIf="lastNameInput.dirty && lastNameInput.invalid">
                         <small class="form-text text-danger"
@@ -49,10 +49,11 @@
                         </small>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="email" jhiTranslate="global.form.email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
+                <div class="md-form">
+                    <label for="email" class="" jhiTranslate="global.form.email">Email</label>
+                    <input mdbInput type="email" class="form-control" id="email" name="email"
                            [(ngModel)]="settingsAccount.email" minlength="5" maxlength="254" #emailInput="ngModel" email required>
+
                     <div *ngIf="emailInput.dirty && emailInput.invalid">
                         <small class="form-text text-danger"
                            *ngIf="emailInput.errors.required" jhiTranslate="global.messages.validate.email.required">
@@ -78,7 +79,7 @@
                         <option *ngFor="let language of languages" [value]="language">{{language | findLanguageFromKey}}</option>
                     </select>
                 </div>
-                <button type="submit" [disabled]="settingsForm.form.invalid" class="btn btn-primary" jhiTranslate="settings.form.button">Save</button>
+                <button mdbBtn [disabled]="settingsForm.form.invalid" color="info" block="true" class="my-4" type="submit" jhiTranslate="settings.form.button">Save</button>
             </form>
         </div>
     </div>

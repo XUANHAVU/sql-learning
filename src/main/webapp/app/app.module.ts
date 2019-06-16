@@ -17,6 +17,7 @@ import {LearnSqlAppRoutingModule} from './app-routing.module';
 import {LearnSqlHomeModule} from './home/home.module';
 import {LearnSqlAccountModule} from './account/account.module';
 import {LearnSqlEntityModule} from './entities/entity.module';
+
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
@@ -28,12 +29,18 @@ import {
     ErrorComponent
 } from './layouts';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {NavigationComponent} from 'app/layouts/navbar/navigation.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {DataService} from 'app/layouts/data.service';
+import {LearnSqlTryItModule} from 'app/tryits/tryits.module';
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         Ng2Webstorage.forRoot({prefix: 'jhi', separator: '-'}),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
@@ -45,14 +52,24 @@ import {NavigationComponent} from 'app/layouts/navbar/navigation.component';
         LearnSqlSharedModule.forRoot(),
         LearnSqlCoreModule,
         LearnSqlHomeModule,
+        LearnSqlTryItModule,
         LearnSqlAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         NgbModule,
         LearnSqlEntityModule,
         LearnSqlAppRoutingModule,
-        MDBBootstrapModule.forRoot()
+        MDBBootstrapModule.forRoot(),
+        MatTreeModule, MatIconModule, MatButtonModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, NavigationComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        NavigationComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        ActiveMenuDirective,
+        FooterComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
@@ -73,7 +90,8 @@ import {NavigationComponent} from 'app/layouts/navbar/navigation.component';
             provide: HTTP_INTERCEPTORS,
             useClass: NotificationInterceptor,
             multi: true
-        }
+        },
+        DataService
     ],
     bootstrap: [JhiMainComponent]
 })

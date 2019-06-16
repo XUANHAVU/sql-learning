@@ -43,7 +43,8 @@
                 "database": "Database",
                 "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
             },
-            "language": "Language"
+            "language": "Language",
+            "profile": "Information"
         },
         "form": {
             "username": "Username",
@@ -55,7 +56,10 @@
             "confirmpassword": "New password confirmation",
             "confirmpassword.placeholder": "Confirm the new password",
             "email": "Email",
-            "email.placeholder": "Your email"
+            "email.placeholder": "Your email",
+            "remember": "Remember me",
+            "notmember": "Not a member?",
+            "signinwith": "or sign in with:"
         },
         "messages": {
             "info": {
@@ -98,6 +102,17 @@
         },
         "ribbon": {
             "dev": "Development"
+        },
+        "footer": {
+            "title": "THE WORLD'S LARGEST WEB DEVELOPER SITE",
+            "contact": "Contact",
+            "aboutus": "About Us",
+            "el": "Easy Learning",
+            "tiy": "Try It Yourself",
+            "free": "It is Free",
+            "address": "Nghiem Xuan Yem - Dai Kim Ward - Hoang Mai District - Hanoi City",
+            "col1": "Thang Long University",
+            "ndcol1": "Learn SQL Online Web Tutorials is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content."
         },
         "item-count": "Showing {{first}} - {{second}} of {{total}} items."
     },

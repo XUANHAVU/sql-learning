@@ -1,43 +1,123 @@
-<div class="modal-header">
-    <h4 class="modal-title" jhiTranslate="login.title">Sign in</h4>
-    <button aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')"><span aria-hidden="true">x</span>
-    </button>
+<!--<div class="modal-header">-->
+<!--<h4 class="modal-title" jhiTranslate="login.title">Sign in</h4>-->
+<!--<button aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')">-->
+<!--<span aria-hidden="true">x</span>-->
+<!--</button>-->
+<!--</div>-->
+<!--<div class="modal-body">-->
+<!--<div class="row justify-content-center">-->
+<!--<div class="col-md-8">-->
+<!--<div class="alert alert-danger" role="alert" *ngIf="authenticationError"-->
+<!--jhiTranslate="login.messages.error.authentication">-->
+<!--<strong>Failed to sign in!</strong> Please check your credentials and try again.-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-8">-->
+<!--<form class="form" role="form" (ngSubmit)="login()">-->
+<!--<div class="md-form">-->
+<!--<label for="username" class="" jhiTranslate="global.form.username">User name</label>-->
+<!--<input mdbInput type="text" name="username" [(ngModel)]="username" id="username"-->
+<!--class="form-control">-->
+<!--</div>-->
+<!--<div class="md-form">-->
+<!--<label for="password" class="" jhiTranslate="login.form.password">Password</label>-->
+<!--<input mdbInput type="password" name="password" [(ngModel)]="password" id="password"-->
+<!--class="form-control">-->
+<!--</div>-->
+<!--<div class="btn-group" role="group" aria-label="Basic example">-->
+<!--<button mdbBtn type="submit" color="primary" outline="true" mdbWavesEffect-->
+<!--jhiTranslate="login.form.button">Sign in-->
+<!--</button>-->
+
+<!--<button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect-->
+<!--(click)="requestResetPassword()" jhiTranslate="login.password.forgot">Forget your password?-->
+<!--</button>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<div class="alert alert-danger" role="alert" *ngIf="authenticationError"
+     jhiTranslate="login.messages.error.authentication">
+    <strong>Failed to sign in!</strong> Please check your credentials and try again.
 </div>
-<div class="modal-body">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="alert alert-danger" *ngIf="authenticationError" jhiTranslate="login.messages.error.authentication">
-                <strong>Failed to sign in!</strong> Please check your credentials and try again.
-            </div>
+<!-- Default form login -->
+<form class="text-center border border-light p-5" role="form" (ngSubmit)="login()">
+
+    <p class="h4 mb-4" jhiTranslate="global.menu.account.login">Sign in</p>
+
+    <!-- Email -->
+    <!--<input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">-->
+
+    <div class="md-form">
+        <label for="username" class="" jhiTranslate="global.form.username">User name</label>
+        <input mdbInput type="text" name="username" [(ngModel)]="username" id="username"
+               class="form-control">
+    </div>
+
+    <!-- Password -->
+    <!--<input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">-->
+
+    <div class="md-form">
+        <label for="password" class="" jhiTranslate="login.form.password">Password</label>
+        <input mdbInput type="password" name="password" [(ngModel)]="password" id="password"
+               class="form-control">
+    </div>
+
+    <div class="d-flex justify-content-around">
+        <div>
+            <!-- Remember me -->
+            <mdb-checkbox [default]="true"><p jhiTranslate="global.form.remember">Remember me</p></mdb-checkbox>
         </div>
-        <div class="col-md-8">
-            <form class="form" role="form" (ngSubmit)="login()">
-                <div class="form-group">
-                    <label class="username-label" for="username" jhiTranslate="global.form.username">Login</label>
-                    <input type="text" class="form-control" name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}"
-                    [(ngModel)]="username">
-                </div>
-                <div class="form-group">
-                    <label for="password" jhiTranslate="login.form.password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
-                           [(ngModel)]="password">
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label" for="rememberMe">
-                        <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" [(ngModel)]="rememberMe" checked>
-                        <span jhiTranslate="login.form.rememberme">Remember me</span>
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary" jhiTranslate="login.form.button">Sign in</button>
-            </form>
-            <p></p>
-            <div class="alert alert-warning">
-                <a class="alert-link" (click)="requestResetPassword()" jhiTranslate="login.password.forgot">Did you forget your password?</a>
-            </div>
-            <div class="alert alert-warning">
-                <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>
-                <a class="alert-link" (click)="register()" jhiTranslate="global.messages.info.register.link">Register a new account</a>
-            </div>
+        <div>
+            <!-- Forgot password -->
+            <a (click)="requestResetPassword()" jhiTranslate="login.password.forgot">Forgot password?</a>
         </div>
     </div>
-</div>
+
+    <!-- Sign in button -->
+    <button mdbBtn color="info" block="true" class="my-4" type="submit" jhiTranslate="login.form.button">Sign in
+    </button>
+
+    <!-- Register -->
+    <p jhiTranslate="global.form.notmember">Not a member?</p>
+    <a (click)="register()" jhiTranslate="global.menu.account.register">Register</a>
+    <!-- Social login -->
+    <p jhiTranslate="global.form.signinwith">or sign in with:</p>
+
+    <a type="button" class="light-blue-text mx-2">
+        <!-- <i class="fab fa-facebook-f"></i> -->
+        <mdb-icon fab icon="facebook"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <!-- <i class="fab fa-twitter"></i> -->
+        <mdb-icon fab icon="twitter"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <!-- <i class="fab fa-linkedin-in"></i> -->
+        <mdb-icon fab icon="linkedin"></mdb-icon>
+    </a>
+</form>
+<!-- Default form login -->
+<!--<form class="form" role="form" (ngSubmit)="login()">-->
+<!--<div class="md-form">-->
+<!--<label for="username" class="" jhiTranslate="global.form.username">User name</label>-->
+<!--<input mdbInput type="text" name="username" [(ngModel)]="username" id="username"-->
+<!--class="form-control">-->
+<!--</div>-->
+<!--<div class="md-form">-->
+<!--<label for="password" class="" jhiTranslate="login.form.password">Password</label>-->
+<!--<input mdbInput type="password" name="password" [(ngModel)]="password" id="password"-->
+<!--class="form-control">-->
+<!--</div>-->
+<!--<div class="btn-group" role="group" aria-label="Basic example">-->
+<!--<button mdbBtn type="submit" color="primary" outline="true" mdbWavesEffect-->
+<!--jhiTranslate="login.form.button">Sign in-->
+<!--</button>-->
+
+<!--<button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect-->
+<!--(click)="requestResetPassword()" jhiTranslate="login.password.forgot">Forget your password?-->
+<!--</button>-->
+<!--</div>-->
+<!--</form>-->

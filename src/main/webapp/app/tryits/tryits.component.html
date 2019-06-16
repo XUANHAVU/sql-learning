@@ -1,0 +1,201 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="container">
+            <div class="md-form">
+                <i class="fas fa-pencil-alt prefix"></i>
+                <textarea [(ngModel)]="query" type="text" id="form8" rows="7" class="md-textarea form-control" mdbInput
+                          placeholder="Enter the query statement here!"></textarea>
+                <label for="form8">SQL Statement</label>
+                <div>
+                    <p>Edit the SQL Statement, and click "Run SQL" to see the result.</p>
+                    <div class="row">
+                        <button type="submit"
+                                class="btn btn-success"
+                                (click)="getQuerySQL(query)">
+                            Run SQL
+                        </button>
+                        <button type="submit"
+                                class="btn btn-success"
+                                (click)="clearQuerySQL()">
+                            Clear
+                        </button>
+                    </div>
+                </div>
+                <br><br><br>
+
+                <div *ngFor="let item of data">
+                    <div *ngIf="item.row.length > 0">
+                        Result:
+                        <hr>
+                        <table mdbTable hover="true">
+                            <thead>
+                            <tr>
+                                <th *ngFor="let key of item.row[0] | keys" scope="col">{{key | uppercase}}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr mdbTableCol *ngFor="let c of item.row">
+                                <td *ngFor="let key of c | keys">{{c[key]}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div *ngIf="item.updateCount > 0">
+                        Result:
+                        <hr>
+                        You have made changes to the database. Rows affected: {{item.updateCount}}
+                    </div>
+                </div>
+
+                <!--<table mdbTable hover="true">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th *ngFor="let name of nameArray" scope="col">{{name | uppercase}}</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr mdbTableCol *ngFor="let c of data">-->
+                <!--<td *ngFor="let key of c | keys">{{c[key]}}</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+                <!--</table>-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center font-weight-bold">Database</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <p>Tablename</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="far fa-plus-square"></i>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="font-weight-bold text-primary"><a (click)="addString('Customer')">Customer</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="far fa-plus-square"></i>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="font-weight-bold text-primary"><a (click)="addString('Employees')">Employees</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="far fa-plus-square"></i>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="font-weight-bold text-primary"><a (click)="addString('Orders')">Orders</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="far fa-plus-square"></i>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="font-weight-bold text-primary"><a (click)="addString('Shipper')">Shipper</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <p>Records</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-1">
+                        <mdb-icon fas icon="database"></mdb-icon>
+                    </div>
+                    <div class="col-md-3">
+                        <a (click)="addTextQuery('SELECT * FROM Customer;')"><p class="text-info">{{lengthCustomers}}</p></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <mdb-icon fas icon="database"></mdb-icon>
+                    </div>
+                    <div class="col-md-3">
+                        <a (click)="addTextQuery('SELECT * FROM Employees;')"><p class="text-info">{{lengthEmployees}}</p></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <mdb-icon fas icon="database"></mdb-icon>
+                    </div>
+                    <div class="col-md-3">
+                        <a (click)="addTextQuery('SELECT * FROM Orders;')"><p class="text-info">{{lengthOrders}}</p></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <mdb-icon fas icon="database"></mdb-icon>
+                    </div>
+                    <div class="col-md-3">
+                        <a (click)="addTextQuery('SELECT * FROM Shipper;')"><p class="text-info">{{lengthShippers}}</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col text-center">
+                    <button type="button" mdbBtn color="success" rounded="true" data-toggle="modal"
+                            data-target="#basicExample"
+                            (click)="frame.show()" mdbWavesEffect>Restore Database
+                    </button>
+                    <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1"
+                         role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true" (close)="onClose($event)">
+                        <div class="modal-dialog modal-notify modal-danger modal-side modal-top-right" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Header-->
+                                <div class="modal-header">
+                                    <p class="heading">Restore Database</p>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                            (click)="frame.hide()">
+                                        <span aria-hidden="true" class="white-text">&times;</span>
+                                    </button>
+                                </div>
+
+                                <!--Body-->
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5>This action will restore the database back to its original content.</h5>
+                                            <h5>
+                                                <span class="badge">Are you sure you want to continue?</span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Footer-->
+                                <div class="modal-footer justify-content-center">
+                                    <a type="button" mdbBtn
+                                       color="primary" class="waves-effect"
+                                       mdbWavesEffect (click)="restoreDatabase()">Yes
+                                        <!--<i class="far fa-gem ml-1"></i>-->
+                                        <mdb-icon fas icon="check"></mdb-icon>
+                                    </a>
+                                    <a type="button" mdbBtn color="primary" outline="true" class="waves-effect"
+                                       mdbWavesEffect (click)="frame.hide()"
+                                       data-dismiss="modal">No, thanks</a>
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

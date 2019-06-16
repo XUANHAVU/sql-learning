@@ -11,6 +11,8 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {})
 public interface CategoryTypeMapper extends EntityMapper<CategoryTypeDTO, CategoryType> {
 
+    @Mapping(target = "categoryTypeIDS", source = "categoryTypeIDS")
+    CategoryTypeDTO toDto(CategoryType categoryType);
 
     @Mapping(target = "categoryTypeIDS", ignore = true)
     CategoryType toEntity(CategoryTypeDTO categoryTypeDTO);

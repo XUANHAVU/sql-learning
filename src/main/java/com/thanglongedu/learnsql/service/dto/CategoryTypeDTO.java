@@ -3,6 +3,7 @@ import java.time.Instant;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A DTO for the CategoryType entity.
@@ -28,6 +29,7 @@ public class CategoryTypeDTO implements Serializable {
     @NotNull
     private Integer updatedBy;
 
+    private Set<CategoryDTO> categoryTypeIDS;
 
     public Long getId() {
         return id;
@@ -83,6 +85,14 @@ public class CategoryTypeDTO implements Serializable {
 
     public void setUpdatedBy(Integer updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    public Set<CategoryDTO> getCategoryTypeIDS() {
+        return categoryTypeIDS;
+    }
+
+    public void setCategoryTypeIDS(Set<CategoryDTO> categoryTypeIDS) {
+        this.categoryTypeIDS = categoryTypeIDS;
     }
 
     @Override
