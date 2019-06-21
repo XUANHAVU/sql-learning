@@ -5,30 +5,45 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="learnSqlApp.categoryType.nameCategoryType">Name Category Type</span></dt>
-                <dd>
-                    <span>{{categoryType.nameCategoryType}}</span>
-                </dd>
-                <dt><span jhiTranslate="learnSqlApp.categoryType.description">Description</span></dt>
-                <dd>
-                    <span>{{categoryType.description}}</span>
-                </dd>
-                <dt><span jhiTranslate="learnSqlApp.categoryType.createdDate">Created Date</span></dt>
-                <dd>
-                    <span>{{categoryType.createdDate}}</span>
-                </dd>
-                <dt><span jhiTranslate="learnSqlApp.categoryType.createdBy">Created By</span></dt>
-                <dd>
-                    <span>{{categoryType.createdBy}}</span>
-                </dd>
-                <dt><span jhiTranslate="learnSqlApp.categoryType.updatedDate">Updated Date</span></dt>
-                <dd>
-                    <span>{{categoryType.updatedDate}}</span>
-                </dd>
-                <dt><span jhiTranslate="learnSqlApp.categoryType.updatedBy">Updated By</span></dt>
-                <dd>
-                    <span>{{categoryType.updatedBy}}</span>
-                </dd>
+
+                <div class="md-form">
+                    <input disabled mdbInput placeholder="{{categoryType.nameCategoryType}}" type="text" class="form-control">
+                    <label jhiTranslate="learnSqlApp.categoryType.nameCategoryType">Name Category Type</label>
+                </div>
+
+                <div class="md-form">
+                    <textarea disabled mdbInput placeholder="{{categoryType.description}}" type="text" class="md-textarea form-control"></textarea>
+                    <label jhiTranslate="learnSqlApp.categoryType.description">Description</label>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">
+                        <div class="md-form">
+                            <input disabled mdbInput placeholder="{{categoryType.createdDate}}" type="text" class="form-control">
+                            <label jhiTranslate="learnSqlApp.categoryType.createdDate">Created Date</label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="md-form">
+                            <input disabled mdbInput placeholder="{{categoryType.createdBy}}" type="number" class="form-control">
+                            <label jhiTranslate="learnSqlApp.categoryType.createdBy">Created By</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="md-form">
+                            <input disabled mdbInput placeholder="{{categoryType.updatedDate}}" type="text" class="form-control">
+                            <label jhiTranslate="learnSqlApp.categoryType.updatedDate">Updated Date</label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="md-form">
+                            <input disabled mdbInput placeholder="{{categoryType.updatedBy}}" type="number" class="form-control">
+                            <label jhiTranslate="learnSqlApp.categoryType.updatedBy">Updated By</label>
+                        </div>
+                    </div>
+                </div>
             </dl>
 
             <button type="submit"

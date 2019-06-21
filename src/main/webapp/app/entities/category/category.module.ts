@@ -13,11 +13,16 @@ import {
     categoryRoute,
     categoryPopupRoute
 } from './';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 const ENTITY_STATES = [...categoryRoute, ...categoryPopupRoute];
 
 @NgModule({
-    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [
+        LearnSqlSharedModule,
+        RouterModule.forChild(ENTITY_STATES),
+        MDBBootstrapModule.forRoot()
+    ],
     declarations: [
         CategoryComponent,
         CategoryDetailComponent,

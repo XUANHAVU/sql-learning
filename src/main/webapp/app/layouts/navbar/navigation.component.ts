@@ -127,7 +127,7 @@ export class NavigationComponent implements OnInit {
             );
 
         this.loadAll();
-        this.globalreplace = / /g
+        this.globalreplace = / /g;
         this.globalreplace2 = /,/g;
     }
 

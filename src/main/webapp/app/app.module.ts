@@ -36,6 +36,8 @@ import {MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {DataService} from 'app/layouts/data.service';
 import {LearnSqlTryItModule} from 'app/tryits/tryits.module';
+import {LearnSqlDashBoardModule} from 'app/dashboard';
+import {FilterPipe} from 'app/layouts/safe-pipe';
 
 @NgModule({
     imports: [
@@ -53,6 +55,7 @@ import {LearnSqlTryItModule} from 'app/tryits/tryits.module';
         LearnSqlCoreModule,
         LearnSqlHomeModule,
         LearnSqlTryItModule,
+        LearnSqlDashBoardModule,
         LearnSqlAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         NgbModule,
@@ -62,6 +65,7 @@ import {LearnSqlTryItModule} from 'app/tryits/tryits.module';
         MatTreeModule, MatIconModule, MatButtonModule
     ],
     declarations: [
+        FilterPipe,
         JhiMainComponent,
         NavbarComponent,
         NavigationComponent,

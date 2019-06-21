@@ -10,17 +10,24 @@
 
         <div class="list-group list-group-flush" *ngSwitchCase="true">
 
+            <a routerLink="dashboard"
+               routerLinkActive="active"
+               class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon fas icon="home"></mdb-icon>
+                <span>Dashboard</span>
+            </a>
+
             <a routerLink="category-type"
                routerLinkActive="active"
                class="list-group-item list-group-item-action waves-effect">
-                <i class="fas fa-code"></i>
+                <mdb-icon fab icon="microsoft"></mdb-icon>
                 <span jhiTranslate="global.menu.entities.categoryType">Category Type</span>
             </a>
 
             <a routerLink="category"
                routerLinkActive="active"
                class="list-group-item list-group-item-action waves-effect">
-                <i class="fas fa-code"></i>
+                <mdb-icon fas icon="align-left"></mdb-icon>
                 <span jhiTranslate="global.menu.entities.category">Category</span>
             </a>
 
@@ -112,24 +119,30 @@
                     <!--{{node.name}}-->
                 <!--</mat-tree-node>-->
             <!--</mat-tree>-->
-            <ul *ngFor="let categoryType of categoryTypes" class="list-group">
-            <li class="list-group-item">
-                <h4>{{categoryType.nameCategoryType}}</h4>
-                <ul *ngFor="let category of categories" class="list-group">
-                    <li *ngIf="categoryType.id == category.categoryTypeId"
-                        class="list-item">
-                        <a class="list-group-item list-group-item-action waves-effect"
-                           (click)="changeNode(category.id)"
-                           routerLinkActive="active"
-                           [routerLink]="['/', 'view', category.nameCategory.toString().replace(globalreplace, '_').replace(globalreplace2, ''), category.id ]">
+            <hr>
+            <div class="md-form">
+                <input type="search" [(ngModel)]="searchText" placeholder="Search">
+                <br>
+                <br>
+                <ul *ngFor="let categoryType of categoryTypes" class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="blue-text"><strong>{{categoryType.nameCategoryType}}</strong></h4>
+                        <ul *ngFor="let category of categories | filter: searchText" class="list-group">
+                            <li *ngIf="categoryType.id == category.categoryTypeId"
+                                class="list-item">
+                                <a class="list-group-item list-group-item-action waves-effect"
+                                   (click)="changeNode(category.id)"
+                                   routerLinkActive="active"
+                                   [routerLink]="['/', 'view', category.nameCategory.toString().replace(globalreplace, '_').replace(globalreplace2, ''), category.id ]">
                             <span>
                             {{category.nameCategory}}
                             </span>
-                        </a>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-            </li>
-        </ul>
+            </div>
         </div>
     </div>
     <!-- Sidebar -->

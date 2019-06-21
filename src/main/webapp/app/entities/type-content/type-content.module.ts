@@ -13,11 +13,12 @@ import {
     typeContentRoute,
     typeContentPopupRoute
 } from './';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 const ENTITY_STATES = [...typeContentRoute, ...typeContentPopupRoute];
 
 @NgModule({
-    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES), MDBBootstrapModule.forRoot()],
     declarations: [
         TypeContentComponent,
         TypeContentDetailComponent,

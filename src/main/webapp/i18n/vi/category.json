@@ -14,7 +14,7 @@
                 "question": "Bạn có chắc là muốn xóa Category {{ id }}?"
             },
             "detail": {
-                "title": "Category"
+                "title": "Category ID -"
             },
             "nameCategory": "Name Category",
             "title": "Title",

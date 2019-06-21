@@ -13,11 +13,12 @@ import {
     exercisesRoute,
     exercisesPopupRoute
 } from './';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 const ENTITY_STATES = [...exercisesRoute, ...exercisesPopupRoute];
 
 @NgModule({
-    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES), MDBBootstrapModule.forRoot()],
     declarations: [
         ExercisesComponent,
         ExercisesDetailComponent,

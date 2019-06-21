@@ -13,11 +13,12 @@ import {
     sQLQueryRoute,
     sQLQueryPopupRoute
 } from './';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 const ENTITY_STATES = [...sQLQueryRoute, ...sQLQueryPopupRoute];
 
 @NgModule({
-    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES), MDBBootstrapModule.forRoot()],
     declarations: [
         SQLQueryComponent,
         SQLQueryDetailComponent,

@@ -11,7 +11,8 @@ import {CategoryTypeService} from './category-type.service';
 
 @Component({
     selector: 'jhi-category-type',
-    templateUrl: './category-type.component.html'
+    templateUrl: './category-type.component.html',
+    styleUrls: ['../search.scss']
 })
 export class CategoryTypeComponent implements OnInit, OnDestroy {
     categoryTypes: ICategoryType[];

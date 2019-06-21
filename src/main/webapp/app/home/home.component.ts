@@ -26,6 +26,7 @@ import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http'
     templateUrl: './home.component.html',
     styleUrls: ['home.scss']
 })
+
 export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
@@ -112,19 +113,11 @@ export class HomeComponent implements OnInit {
     }
 
     next(id: number) {
-        if (id < this.lengcategories) {
-            this.idContent = id + 1;
-        } else {
-            this.idContent = 1;
-        }
+
     }
 
     previous(id: number) {
-        if (id > 1) {
-            this.idContent = id - 1;
-        } else {
-            this.idContent = this.lengcategories;
-        }
+
     }
 
     loadServiceDataTable() {
@@ -185,18 +178,18 @@ export class HomeComponent implements OnInit {
         this.data.currentId.subscribe(id => {
             if (id === null) {
                 this.idContent = 1;
-                this.router.navigate(['view/SQL_Intro/1']).then(e => {
+                this.router.navigate(['/view/SQL_Intro/1']).then(e => {
                     if (e) {
-                        console.log('Navigation is successful!');
+                        console.log('Success');
                     } else {
-                        console.log('Navigation has failed!');
+                        console.log('Fail');
                     }
                 });
             } else {
                 this.idContent = id;
             }
-
         });
+
         // this.data.currentName.subscribe(name => this.nameContent = name);
         // this.data.currentTitle.subscribe(title => this.titleContent = title);
         // this.data.currentDescription.subscribe(des => this.descriptionContent = des);

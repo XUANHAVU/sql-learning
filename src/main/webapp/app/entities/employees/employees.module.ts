@@ -13,11 +13,12 @@ import {
     employeesRoute,
     employeesPopupRoute
 } from './';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 const ENTITY_STATES = [...employeesRoute, ...employeesPopupRoute];
 
 @NgModule({
-    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [LearnSqlSharedModule, RouterModule.forChild(ENTITY_STATES), , MDBBootstrapModule.forRoot()],
     declarations: [
         EmployeesComponent,
         EmployeesDetailComponent,

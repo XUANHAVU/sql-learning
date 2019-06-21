@@ -26,7 +26,7 @@ export const HOME_ROUTE: Routes = [
         path: 'view/:name/:id',
         component: HomeComponent,
         resolve: {
-            // category: CategoryResolve
+            category: CategoryResolve
         },
         data: {
             authorities: [],

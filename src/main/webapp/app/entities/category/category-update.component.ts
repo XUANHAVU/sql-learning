@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {HttpResponse, HttpErrorResponse} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {filter, map} from 'rxjs/operators';
 import * as moment from 'moment';
-import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
-import { JhiAlertService } from 'ng-jhipster';
-import { ICategory } from 'app/shared/model/category.model';
-import { CategoryService } from './category.service';
-import { ICategoryType } from 'app/shared/model/category-type.model';
-import { CategoryTypeService } from 'app/entities/category-type';
+import {DATE_FORMAT, DATE_TIME_FORMAT} from 'app/shared/constants/input.constants';
+import {JhiAlertService} from 'ng-jhipster';
+import {ICategory} from 'app/shared/model/category.model';
+import {CategoryService} from './category.service';
+import {ICategoryType} from 'app/shared/model/category-type.model';
+import {CategoryTypeService} from 'app/entities/category-type';
 
 @Component({
     selector: 'jhi-category-update',
@@ -28,14 +28,15 @@ export class CategoryUpdateComponent implements OnInit {
         protected categoryService: CategoryService,
         protected categoryTypeService: CategoryTypeService,
         protected activatedRoute: ActivatedRoute
-    ) {}
+    ) {
+    }
 
     ngOnInit() {
         this.isSaving = false;
-        this.activatedRoute.data.subscribe(({ category }) => {
+        this.activatedRoute.data.subscribe(({category}) => {
             this.category = category;
-            this.createdDate = this.category.createdDate != null ? this.category.createdDate.format(DATE_TIME_FORMAT) : null;
-            this.updatedDate = this.category.updatedDate != null ? this.category.updatedDate.format(DATE_TIME_FORMAT) : null;
+            this.createdDate = this.category.createdDate != null ? this.category.createdDate.format(DATE_FORMAT) : null;
+            this.updatedDate = this.category.updatedDate != null ? this.category.updatedDate.format(DATE_FORMAT) : null;
         });
         this.categoryTypeService
             .query()
@@ -52,8 +53,8 @@ export class CategoryUpdateComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        this.category.createdDate = this.createdDate != null ? moment(this.createdDate, DATE_TIME_FORMAT) : null;
-        this.category.updatedDate = this.updatedDate != null ? moment(this.updatedDate, DATE_TIME_FORMAT) : null;
+        this.category.createdDate = this.createdDate != null ? moment(this.createdDate, DATE_FORMAT) : null;
+        this.category.updatedDate = this.updatedDate != null ? moment(this.updatedDate, DATE_FORMAT) : null;
         if (this.category.id !== undefined) {
             this.subscribeToSaveResponse(this.categoryService.update(this.category));
         } else {

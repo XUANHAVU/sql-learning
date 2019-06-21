@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {ICategory} from "app/shared/model/category.model";
 
 @Pipe({name: 'safe'})
 export class SafePipe implements PipeTransform {
@@ -77,5 +78,23 @@ export class SubString implements PipeTransform {
 
         }
         return str;
+    }
+}
+
+@Pipe({name: 'filter'})
+export class FilterPipe implements PipeTransform {
+    transform(items: ICategory[], searchText: string): any[] {
+
+        if (!items) {
+            return [];
+        }
+        if (!searchText) {
+            return items;
+        }
+        searchText = searchText.toLocaleLowerCase();
+
+        return items.filter(it => {
+            return it.nameCategory.toLocaleLowerCase().includes(searchText);
+        });
     }
 }
